@@ -1,25 +1,31 @@
 {
   "name": "gatsby-boilerplate",
+  "private": true,
   "version": "1.0.0",
   "description": "The boilerplate for gatsby enabled websites.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby": "^2.19.10",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lechev/gatsby-boilerplate.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/lechev/gatsby-boilerplate/issues"
-  },
-  "homepage": "https://github.com/lechev/gatsby-boilerplate#readme",
-  "dependencies": {
-    "gatsby": "^2.19.10",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
   }
 }
