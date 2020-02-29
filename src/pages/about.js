@@ -1,10 +1,11 @@
 import React from "react"
 import Header from "../components/header"
+import Meta from "../components/meta"
 
 export default () => (
-  <div style={{color: `teal`}}>
+  <section>
+    <Meta title="About" />
     <Header headerText="About Gatsby" />
-    <Header headerText="It's pretty cool" />
     <p>Such wow. Very React.</p>
-  </div>
+  </section>
 )

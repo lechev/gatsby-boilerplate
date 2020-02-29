@@ -1,11 +1,11 @@
 import React from "react"
 import Header from "../components/header"
-import { Link } from "gatsby"
+import Meta from "../components/meta"
 
-export default() => (
-  <div style={{ color: `yellow`}}>
-    <Link to="/">Home</Link>
+export default () => (
+  <section>
+    <Meta title="Contact" />
     <Header headerText="Contact"/>
-    <p>Such wow. Very React.</p>
-  </div>
+    <p>A contact page is here dudes and dudetes.</p>
+  </section>
 )
