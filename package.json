@@ -1,9 +1,12 @@
 {
   "name": "gatsby-boilerplate",
   "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "1.0.0",
-  "description": "The boilerplate for gatsby enabled websites.",
-  "main": "index.js",
+  "author": "Nikolay Lechev <nikolay@kollegorna.se>",
+  "engines": {
+    "node": "12"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -15,17 +18,17 @@
   },
   "dependencies": {
     "gatsby": "^2.19.10",
+    "gatsby-cli": "^2.9.0",
+    "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-typography": "^2.3.22",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lechev/gatsby-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lechev/gatsby-boilerplate/issues"
   }
 }

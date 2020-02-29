@@ -5,5 +5,18 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "Severus Snape",
+    titleTemplate: "%s · The Real Hero",
+    description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+  },
+  plugins: [
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+  ],
 }
