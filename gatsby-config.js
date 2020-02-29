@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Nikolay Lechev",
-    titleTemplate: "%s · Front-end Design and Development",
+    title: "Severus Snape",
+    titleTemplate: "%s · The Real Hero",
     description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
   },
   plugins: [
