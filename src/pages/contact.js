@@ -1,11 +1,14 @@
 import React from "react"
-import Header from "../components/header"
+import styled from "styled-components"
+
 import Meta from "../components/meta"
 
+const Container = styled.section``
+
 export default () => (
-  <section>
+  <Container>
     <Meta title="Contact" />
-    <Header headerText="Contact"/>
+    <h1>Contact</h1>
     <p>A contact page is here dudes and dudetes.</p>
-  </section>
+  </Container>
 )

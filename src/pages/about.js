@@ -1,11 +1,14 @@
 import React from "react"
-import Header from "../components/header"
+import styled from "styled-components"
+
 import Meta from "../components/meta"
 
+const Container = styled.section``
+
 export default () => (
-  <section>
+  <Container>
     <Meta title="About" />
-    <Header headerText="About Gatsby" />
+    <h1>About</h1>
     <p>Such wow. Very React.</p>
-  </section>
+  </Container>
 )

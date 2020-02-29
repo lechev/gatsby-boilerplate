@@ -22,6 +22,7 @@ const Meta = ({ title, description }) => (
 
       return (
         <Helmet title={meta.title} titleTemplate={titleTemplate}>
+          <html lang="en" />
           <meta name="description" content={meta.description} />
         </Helmet>
       )
