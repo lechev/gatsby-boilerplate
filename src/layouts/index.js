@@ -1,27 +1,25 @@
 import React from "react"
-import { Link } from "gatsby"
-import Meta from "../components/meta"
+import styled from "styled-components"
 
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+import Meta from "../components/meta"
+import Header from "../components/header"
+import Footer from "../components/footer"
+
+const Main = styled.main`
+  margin: 3rem auto;
+  max-width: 650px;
+  padding: 0 1rem;
+`
 
 export default ({ children }) => (
-  <main style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+  <React.Fragment>
     <Meta />
+    <Header name="Snape" />
 
-    <header style={{ marginBottom: `1.5rem` }}>
-      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-        <h3 style={{ display: `inline` }}>Snape</h3>
-      </Link>
-      <ul style={{ listStyle: `none`, float: `right` }}>
-        <ListLink to="/">Home</ListLink>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-      </ul>
-    </header>
-    {children}
-  </main>
+    <Main>
+      {children}
+    </Main>
+
+    <Footer name="Severus Snape" />
+  </React.Fragment>
 )
