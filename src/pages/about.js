@@ -1,10 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
 import Header from "../components/header"
+import Meta from "../components/meta"
 
 export default () => (
-  <Layout>
+  <section>
+    <Meta title="About" />
     <Header headerText="About Gatsby" />
     <p>Such wow. Very React.</p>
-  </Layout>
+  </section>
 )

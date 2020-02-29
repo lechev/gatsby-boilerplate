@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Meta from "../components/meta"
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
@@ -8,7 +9,9 @@ const ListLink = props => (
 )
 
 export default ({ children }) => (
-  <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+  <main style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+    <Meta />
+
     <header style={{ marginBottom: `1.5rem` }}>
       <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
         <h3 style={{ display: `inline` }}>Lechev</h3>
@@ -20,5 +23,5 @@ export default ({ children }) => (
       </ul>
     </header>
     {children}
-  </div>
+  </main>
 )

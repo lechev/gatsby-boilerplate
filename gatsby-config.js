@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Severus Snape",
-    titleTemplate: "%s · The Real Hero",
+    title: "Nikolay Lechev",
+    titleTemplate: "%s · Front-end Design and Development",
     description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
   },
   plugins: [
@@ -18,5 +18,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-layout`,
   ],
 }
