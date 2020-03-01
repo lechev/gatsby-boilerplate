@@ -1,0 +1,11 @@
+@import 'heading';
+
+.styled > * + * {
+  margin-top: rem(20);
+}
+
+@for $i from 1 through 6 { // extra spacing for headings
+  .styled > * + h#{$i} {
+    margin-top: rem(40);
+  }
+}

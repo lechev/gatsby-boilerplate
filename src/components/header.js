@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
+import { rem } from "polished"
 import { Link } from "gatsby"
 
 const HeaderContainer = styled.header`
   margin: 3rem auto;
-  max-width: 650px;
+  max-width: ${rem(650)};
   padding: 0 1rem;
 
   a {
@@ -15,6 +16,7 @@ const HeaderContainer = styled.header`
 
   h3 {
     display: inline;
+    font-size: ${rem(20)};
   }
 
   ul {
@@ -27,6 +29,10 @@ const HeaderContainer = styled.header`
     
     &:not(:last-of-type) {
       margin-right: 1rem;
+    }
+
+    a {
+      color: ${props => props.theme.colorTeal};
     }
   }
 `
