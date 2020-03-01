@@ -1,0 +1,17 @@
+// h1
+
+.styled-h1 {
+  @include ff-secondary;
+
+  font-size: rem(56);
+  line-height: 1.1;
+  word-break: break-word;
+
+  @include mq(medium down) {
+    font-size: em(24);
+  }
+}
+
+.styled h1:not(.do-unstyle) {
+  @extend .styled-h1;
+}

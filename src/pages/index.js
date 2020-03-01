@@ -1,17 +1,20 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
 import Img from "gatsby-image"
+
+import { rem } from "polished"
+import { graphql } from "gatsby"
 
 import logoSvgUrl, {
   ReactComponent as LogoSvg,
 } from "../assets/images/logo.svg"
 
-const Container = styled.section`
+const Container = styled.section.attrs({ className: `styled` })`
   .-svg-logo {
-    margin: 20px 5px;
-    width: 60px;
-    height: 60px;
+    display: block;
+    margin: ${rem(20)} ${rem(5)};
+    width: ${rem(60)};
+    height: ${rem(60)};
   }
 `
 export default ({ data }) => (
