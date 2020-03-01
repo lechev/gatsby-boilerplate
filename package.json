@@ -19,6 +19,7 @@
   "dependencies": {
     "@svgr/webpack": "^5.2.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "base64-font-loader": "joeldenning/base64-font-loader#webpack-4",
     "gatsby": "^2.19.10",
     "gatsby-cli": "^2.9.0",
     "gatsby-image": "^2.2.41",
