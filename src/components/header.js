@@ -16,6 +16,7 @@ const HeaderContainer = styled.header`
 
   h3 {
     display: inline;
+    font-size: ${rem(20)};
   }
 
   ul {
@@ -28,6 +29,10 @@ const HeaderContainer = styled.header`
     
     &:not(:last-of-type) {
       margin-right: 1rem;
+    }
+
+    a {
+      color: ${props => props.theme.colorTeal};
     }
   }
 `
