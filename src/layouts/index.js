@@ -22,13 +22,13 @@ export default ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Meta />
-      <Header name="Snape" />
+      <Header name="Playground" />
 
       <Main>
         {children}
       </Main>
 
-      <Footer name="Severus Snape" />
+      <Footer name="Kollegorna" />
     </React.Fragment>
   </ThemeProvider>
 )

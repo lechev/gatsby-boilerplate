@@ -7,9 +7,9 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: "The Real Hero",
-    titleTemplate: "%s · Severus Snape",
-    description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+    title: "Try and Test",
+    titleTemplate: "%s · Playground",
+    description: "This is a digital playground for Kollegorna experiments.",
   },
   plugins: [
     {
