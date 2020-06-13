@@ -25,7 +25,7 @@ const FooterContent = styled.main`
 const Footer = ({ name }) => (
   <FooterContainer>
     <FooterContent>
-      <LogoSvg aria-label="Logo inlined" className="-svg-logo" />
+      <LogoSvg aria-label="Playground logo symbol" className="-svg-logo" />
       <small>© {name} {new Date().getFullYear()}</small>
     </FooterContent>
   </FooterContainer>

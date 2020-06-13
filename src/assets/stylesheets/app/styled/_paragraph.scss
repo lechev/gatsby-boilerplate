@@ -1,0 +1,9 @@
+// p
+
+.styled-p {
+  font-size: em(18);
+}
+
+.styled p:not(.do-unstyle) {
+  @extend .styled-p;
+}

@@ -4,56 +4,61 @@ import styled from "styled-components"
 import { rem } from "polished"
 import { Link } from "gatsby"
 
-const HeaderContainer = styled.header`
-  margin: 3rem auto;
-  max-width: ${rem(650)};
-  padding: 0 1rem;
+const HeaderContainer = styled.header.attrs({ className: `styled` })`
+  ${props => props.theme.gridContainer()};
+
+  color: ${props => props.theme.colorIvory};
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding-top: ${rem(60)};
+`
+
+const HeaderInner = styled.section`
+  ${props => props.theme.gridGrid()};
+`
+
+const Logo = styled.div`
+  ${props => props.theme.gridCell(4)};
+`
+
+const Navigation = styled.div`
+  ${props => props.theme.gridCell(8)};
+
+  span {
+    font-size: ${rem(32)};
+    line-height: ${rem(16)};
+    padding-right: ${rem(10)};
+    vertical-align: middle;
+  }
 
   a {
-    text-shadow: none;
-    background-image: none;
+    font-weight: ${props => props.theme.fwPrimaryBold};
+    color: ${props => props.theme.colorWhite};
   }
 
-  h3 {
-    display: inline;
-    font-size: ${rem(20)};
-  }
-
-  ul {
-    list-style: none;
-    float: right;
-  }
-
-  li {
-    display: inline-block;
-    
-    &:not(:last-of-type) {
-      margin-right: 1rem;
-    }
-
-    a {
-      color: ${props => props.theme.colorTeal};
-    }
+  @media ${props => props.theme.mediumDown} {
+    display: none;
   }
 `
 
-const Navigation = styled.ul``
-
-const ListLink = props => (
-  <li>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
-
 const Header = ({ name }) => (
   <HeaderContainer>
-    <Link to="/">
-      <h3>{name}</h3>
-    </Link>
-    <Navigation>
-      <ListLink to="/">Home</ListLink>
-      <ListLink to="/about/">About</ListLink>
-    </Navigation>
+    <HeaderInner>
+      <Logo>
+        <Link to="/">
+          <h3>{name}</h3>
+        </Link>
+      </Logo>
+      <Navigation>
+        <p>
+          <span role="img" aria-label="Wave emoji">👋</span>
+           Hi and welcome to this website, <Link className={`do-unstyle`} to="/">learn more about it</Link>.
+        </p>
+      </Navigation>
+    </HeaderInner>
   </HeaderContainer>
 )
 

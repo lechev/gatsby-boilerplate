@@ -1,0 +1,11 @@
+// a
+
+.styled-a {
+  display: inline-block;
+  font-weight: $fw-primary-bold;
+  color: $color-black;
+}
+
+.styled a:not(.do-unstyle) {
+  @extend .styled-a;
+}
