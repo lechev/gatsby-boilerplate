@@ -4,6 +4,10 @@ import styled from "styled-components"
 import { rem } from "polished"
 import { Link } from "gatsby"
 
+import {
+  ReactComponent as LogoSvg,
+} from "../assets/images/playground-logo.svg"
+
 const HeaderContainer = styled.header.attrs({ className: `styled` })`
   ${props => props.theme.gridContainer()};
 
@@ -18,10 +22,17 @@ const HeaderContainer = styled.header.attrs({ className: `styled` })`
 
 const HeaderInner = styled.section`
   ${props => props.theme.gridGrid()};
+  align-items: center;
 `
 
 const Logo = styled.div`
   ${props => props.theme.gridCell(4)};
+
+  svg {
+    display: block;
+    width: auto;
+    height: ${rem(40)};
+  }
 `
 
 const Navigation = styled.div`
@@ -49,7 +60,7 @@ const Header = ({ name }) => (
     <HeaderInner>
       <Logo>
         <Link to="/">
-          <h3>{name}</h3>
+          <LogoSvg aria-label="{name}" />
         </Link>
       </Logo>
       <Navigation>
