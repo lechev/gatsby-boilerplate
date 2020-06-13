@@ -3,12 +3,13 @@
 .styled-h1 {
   @include ff-secondary;
 
-  font-size: rem(56);
-  line-height: 1.1;
+  font-size: em(96);
+  font-weight: $fw-secondary-normal;
+  line-height: 1.2;
   word-break: break-word;
 
   @include mq(medium down) {
-    font-size: em(24);
+    font-size: em(56);
   }
 }
 

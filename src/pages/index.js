@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 // import { graphql } from "gatsby"
 
-const Container = styled.section`
+const Container = styled.section.attrs({ className: `styled` })`
   overflow: hidden;
   min-height: 100vh;
   height: 100vh;
