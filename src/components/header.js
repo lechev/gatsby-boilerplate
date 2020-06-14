@@ -46,7 +46,7 @@ const Navigation = styled.div`
   }
 
   a {
-    font-weight: ${props => props.theme.fwPrimaryMedium};
+    font-weight: ${props => props.theme.fwPrimarySemibold};
     color: ${props => props.theme.colorWhite};
   }
 
