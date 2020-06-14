@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 import { rem } from "polished"
 
-const containerMaxWidth = 1400
+const containerMaxWidth = 1170
 const columnsCount = 12
 const gutter = 20
 

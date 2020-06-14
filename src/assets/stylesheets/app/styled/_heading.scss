@@ -6,10 +6,12 @@
   font-size: em(96);
   font-weight: $fw-secondary-normal;
   line-height: 1.2;
+  letter-spacing: em(0.5);
   word-break: break-word;
 
   @include mq(medium down) {
     font-size: em(56);
+    letter-spacing: em(0.3);
   }
 }
 
