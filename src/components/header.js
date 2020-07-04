@@ -48,6 +48,26 @@ const Navigation = styled.div`
   a {
     font-weight: ${props => props.theme.fwPrimarySemibold};
     color: ${props => props.theme.colorWhite};
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(100% + ${rem(5)});
+      left: 0;
+      height: ${rem(1)};
+      width: 100%;
+      background: ${props => props.theme.colorWhite};
+      opacity: 0.5;
+      transition: transform .4s ease, opacity .6s ease;
+    }
+
+    &:hover {
+      &:after {
+        transform: scale(0) translateY(-25px);
+        opacity: 0;
+      }
+    }
   }
 
   @media ${props => props.theme.mediumDown} {
