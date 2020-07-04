@@ -33,6 +33,7 @@
     "gatsby-transformer-sharp": "^2.3.16",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
+    "paper": "^0.12.11",
     "polished": "^3.4.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -42,6 +43,7 @@
     "sass-extract-js": "^0.4.0",
     "sass-extract-loader": "^1.1.0",
     "sass-utils": "git+https://3c004c797a82a14ae902c13e17fb58d63eadac73:x-oauth-basic@github.com/kollegorna/sass-utils.git#36132cb",
+    "simplex-noise": "^2.4.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {

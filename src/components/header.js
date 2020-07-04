@@ -66,7 +66,7 @@ const Header = ({ name }) => (
       <Navigation>
         <p>
           <span role="img" aria-label="Wave emoji">👋</span>
-           Hi and welcome to this website, <Link className={`do-unstyle`} to="/">learn more about it</Link>.
+           Welcome to this website, you can learn more <Link className={`do-unstyle`} to="/">about it here</Link>.
         </p>
       </Navigation>
     </HeaderInner>

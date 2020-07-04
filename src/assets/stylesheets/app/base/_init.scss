@@ -4,10 +4,15 @@ html {
   font-weight: $fw-primary-normal;
   color: $color-black;
   background-color: $color-white;
+  cursor: none;
 }
 
 button {
   background: transparent;
   // because `background-color: transparent` from `~sass-utils/src/all` is
   // converted to `background-color: initial` for some reason
+}
+
+a {
+  cursor: none;
 }
