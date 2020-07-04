@@ -5,22 +5,21 @@ import styled from "styled-components"
 import { rem } from "polished"
 // import { graphql } from "gatsby"
 
-const Container = styled.section.attrs({ className: `styled` })`
-  background: ${props => props.theme.colorBlack};
-`
+const Container = styled.section.attrs({ className: `styled` })``
 
 const ContainerInner = styled.div`
+  ${props => props.theme.gridContainer()};
+
   display: flex;
   min-height: 100vh;
   height: 100vh;
-  ${props => props.theme.gridContainer()};
-  color: ${props => props.theme.colorWhite};
   align-items: flex-end;
   justify-content: flex-end;
 `
 
 const Content = styled.div`
   ${props => props.theme.gridCell(8)};
+  
   padding-bottom: 15vh;
 
   @media ${props => props.theme.mediumDown} {

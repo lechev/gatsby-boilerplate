@@ -2,8 +2,9 @@ html {
   font-size: 100%;
   font-family: $ff-primary;
   font-weight: $fw-primary-normal;
-  color: $color-black;
-  background-color: $color-white;
+  color: $color-white;
+  background-color: $color-black;
+  background: linear-gradient(180deg, $color-black 0%, $color-metallic 100%);
   cursor: none;
 }
 

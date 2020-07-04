@@ -59,9 +59,7 @@ const Header = ({ name }) => (
   <HeaderContainer>
     <HeaderInner>
       <Logo>
-        <Link to="/">
-          <LogoSvg aria-label="{name}" />
-        </Link>
+        <LogoSvg aria-label="{name}" />
       </Logo>
       <Navigation>
         <p>
