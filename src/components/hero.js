@@ -27,6 +27,14 @@ const Cta = styled.div`
     ${props => props.theme.gridCell(12)};
   }
 
+  a {
+    animation: attention 8s ease infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
   svg {
     fill: none;
     width: ${rem(122)};

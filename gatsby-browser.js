@@ -6,6 +6,7 @@ export function onRouteUpdate() {
 
   new SmoothScroll(`a[href*="#"]`, {
     speed: 800,
+    offset: 100,
     speedAsDuration: true
   })
 }

@@ -1,0 +1,29 @@
+@keyframes attention {
+  9% {
+    transform: none;
+  }
+  12% {
+    transform: scale(1.05);
+  }
+  16% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.03);
+  }
+  24% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  54% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  64% {
+    transform: scale(1);
+  }
+}
