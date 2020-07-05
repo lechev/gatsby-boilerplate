@@ -7,8 +7,7 @@ export const initCursor = () => {
   let lastX = 0
   let lastY = 0
   let isStuck = false
-  let showCursor = false
-  let group, stuckX, stuckY, fillOuterCursor
+  let group, stuckX, stuckY
 
   const innerCursor = document.querySelector(`.cursor--small`)
 
@@ -91,7 +90,7 @@ export const initCursor = () => {
   }
 
   // add event listeners to all items
-  const linkItems = document.querySelectorAll(`a`)
+  const linkItems = document.querySelectorAll(`a, button`)
   linkItems.forEach(item => {
     item.addEventListener(`mouseenter`, handleMouseEnter)
     item.addEventListener(`mouseleave`, handleMouseLeave)

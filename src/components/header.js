@@ -49,13 +49,14 @@ const Navigation = styled.div`
     font-weight: ${props => props.theme.fwPrimarySemibold};
     color: ${props => props.theme.colorWhite};
     position: relative;
+    padding: ${rem(10)} 0;
 
     &:after {
       content: "";
       position: absolute;
-      top: calc(100% + ${rem(5)});
+      top: calc(100% - ${rem(5)});
       left: 0;
-      height: ${rem(1)};
+      height: ${rem(2)};
       width: 100%;
       background: ${props => props.theme.colorWhite};
       opacity: 0.5;
