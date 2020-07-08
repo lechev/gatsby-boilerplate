@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const Container = styled.section.attrs({ className: `styled` })`
   ${props => props.theme.gridContainer()};
-  min-height: 1000px;
 `
 
 const Intro = () => (

@@ -2,28 +2,46 @@
   9% {
     transform: none;
   }
-  12% {
-    transform: scale(1.05);
+  10% {
+    transform: scale(1.13);
   }
-  16% {
-    transform: scale(0.95);
+  14% {
+    transform: scale(0.87);
   }
-  20% {
-    transform: scale(1.03);
+  18% {
+    transform: scale(1.11);
   }
-  24% {
+  22% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.13);
   }
   54% {
-    transform: scale(0.95);
+    transform: scale(0.87);
   }
   60% {
-    transform: scale(1.03);
+    transform: scale(1.11);
   }
   64% {
     transform: scale(1);
+  }
+}
+
+@keyframes svg_draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svg_fade {
+  0% {
+    stroke-opacity: 1;
+  }
+  93% {
+    stroke-opacity: 1;
+  }
+  100%{
+    stroke-opacity: 0;
   }
 }
