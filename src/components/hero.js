@@ -54,7 +54,7 @@ const Content = styled.div`
   }
 
   span {
-    margin-top: 7%;
+    margin-top: 7.6%;
     display: inline-block;
     line-height: 0;
   }

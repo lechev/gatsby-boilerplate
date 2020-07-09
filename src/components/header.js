@@ -23,6 +23,13 @@ const HeaderContainer = styled.header.attrs({ className: `styled` })`
 const HeaderInner = styled.section`
   ${props => props.theme.gridGrid()};
   align-items: center;
+  transition: transform .2s ease, opacity .2s ease;
+
+  .about-page & {
+    pointer-events: none;
+    transform: scale(0.9) translateY(-25%);
+    opacity: 0.5;
+  }
 `
 
 const Logo = styled.div`
@@ -85,7 +92,7 @@ const Header = ({ name }) => (
       <Navigation>
         <p>
           <span role="img" aria-label="Wave emoji">👋</span>
-           Welcome to this website, you can learn more <Link className={`do-unstyle`} to="/">about it here</Link>.
+           Welcome to this website, you can learn more <Link className={`do-unstyle`} to="/about">about it here</Link>.
         </p>
       </Navigation>
     </HeaderInner>

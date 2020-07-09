@@ -4,7 +4,6 @@ import styled, { ThemeProvider } from "styled-components"
 import Meta from "../components/meta"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import Cursor from "../components/cursor"
 
 import theme from "../theme"
 
@@ -24,8 +23,6 @@ export default ({ children }) => (
       </Main>
 
       <Footer name="Kollegorna" />
-
-      <Cursor />
     </React.Fragment>
   </ThemeProvider>
 )
