@@ -11,15 +11,15 @@ import Meta from "../components/meta"
 import Cursor from "../components/cursor"
 
 const Container = styled.section.attrs({ className: `styled` })`
-  width: calc(100% - ${rem(80)});
+  width: calc(100% - ${rem(20)});
   margin: ${rem(40)} auto 0;
   border-radius: ${rem(20)} ${rem(20)} 0 0;
   background-color: ${props => props.theme.colorWhite};
-  color: ${props => props.theme.colorBlack};
+  color: ${props => props.theme.colorMetallic};
   min-height: 100vh;
 
   a {
-    color: ${props => props.theme.colorBlack} !important;
+    color: ${props => props.theme.colorMetallic} !important;
   }
 `
 const ContainerInner = styled.div`
@@ -31,13 +31,13 @@ export default () => (
     <PageTransition
       defaultStyle={{
         transition: 'transform 500ms ease, opacity 500ms ease',
-        transform: 'translate3d(0, 20vh, 0)',
+        transform: 'translate3d(0, 25vh, 0)',
         opacity: 0.5,
       }}
       transitionStyles={{
         entering: { transform: 'translate3d(0, 0, 0)', opacity: 1, },
         entered: { transform: 'translate3d(0, 0, 0)', opacity: 1, },
-        exiting: { transform: 'translate3d(0, 20vh, 0)', opacity: 0.5, },
+        exiting: { transform: 'translate3d(0, 25vh, 0)', opacity: 0.5, },
       }}
       transitionTime={500}
     > 

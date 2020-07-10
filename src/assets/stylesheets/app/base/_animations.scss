@@ -3,28 +3,28 @@
     transform: none;
   }
   10% {
-    transform: scale(1.13);
+    transform: translateY(-2.5%);
   }
   14% {
-    transform: scale(0.87);
+    transform: translateY(2.5%);
   }
   18% {
-    transform: scale(1.11);
+    transform: translateY(-5%);
   }
   22% {
-    transform: scale(1);
+    transform: translateY(0);
   }
   50% {
-    transform: scale(1.13);
+    transform: translateY(-2.5%);
   }
   54% {
-    transform: scale(0.87);
+    transform: translateY(2.5%);
   }
   60% {
-    transform: scale(1.11);
+    transform: translateY(-5%);
   }
   64% {
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 

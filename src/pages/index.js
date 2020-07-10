@@ -3,12 +3,9 @@ import Hero from "../components/hero"
 import Intro from "../components/intro"
 import Cursor from "../components/cursor"
 
-import Img from "gatsby-image"
 import PageTransition from "gatsby-v2-plugin-page-transitions"
 
-import { graphql } from "gatsby"
-
-export default ({ data }) => (
+export default () => (
   <React.Fragment>
     <PageTransition
       defaultStyle={{
@@ -25,25 +22,7 @@ export default ({ data }) => (
     >
       <Hero />
       <Intro />
-
-      <Img fluid={data.imgMain.childImageSharp.fluid} />    
     </PageTransition>
     <Cursor />
   </React.Fragment>
 )
-
-
-export const query = graphql`
-query {
-  imgMain: file(
-    sourceInstanceName: { eq: "images" }
-    relativePath: { eq: "main-image.jpg" }
-  ) {
-    childImageSharp {
-      fluid(maxWidth: 650) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-}
-`
