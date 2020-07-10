@@ -4,32 +4,32 @@ import Intro from "../components/intro"
 import Cursor from "../components/cursor"
 
 import Img from "gatsby-image"
-import PageTransition from "gatsby-plugin-page-transitions"
+import PageTransition from "gatsby-v2-plugin-page-transitions"
 
 import { graphql } from "gatsby"
 
 export default ({ data }) => (
-  <PageTransition
-    // defaultStyle={{
-    //   transform: `scale(1)`,
-    //   transition: `transform .2s ease`,
-    // }}
-    // transitionStyles={{
-    //   entering: { transform: `scale(1)` },
-    //   entered: { transform: `scale(1)` },
-    //   exiting: { transform: `scale(0.8)` },
-    // }}
-    transitionTime={500}
-  >
-    <React.Fragment>
+  <React.Fragment>
+    <PageTransition
+      defaultStyle={{
+        transition: 'transform 500ms ease, opacity 500ms ease',
+        transform: 'translate3d(0, 2.5vh, 0) scale(0.95)',
+        opacity: 0.5,
+      }}
+      transitionStyles={{
+        entering: { transform: 'translate3d(0, 0, 0) scale(1)', opacity: 1, },
+        entered: { transform: 'translate3d(0, 0, 0) scale(1)', opacity: 1, },
+        exiting: { transform: 'translate3d(0, 2.5vh, 0) scale(0.95)', opacity: 0.5, },
+      }}
+      transitionTime={500}
+    >
       <Hero />
       <Intro />
 
-      <Img fluid={data.imgMain.childImageSharp.fluid} />
-    </React.Fragment>
-
+      <Img fluid={data.imgMain.childImageSharp.fluid} />    
+    </PageTransition>
     <Cursor />
-  </PageTransition>
+  </React.Fragment>
 )
 
 

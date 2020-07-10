@@ -16,6 +16,10 @@ const CursorContainer = styled.div`
     border-radius: 50%;
     z-index: 99;
     background: ${props => props.theme.colorWhite};
+
+    .about-page & {
+      background: ${props => props.theme.colorBlack};
+    }
   }
 
   .cursor--canvas {

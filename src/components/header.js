@@ -18,6 +18,10 @@ const HeaderContainer = styled.header.attrs({ className: `styled` })`
   transform: translateX(-50%);
   z-index: 1;
   padding-top: ${rem(60)};
+
+  .about-page & {
+    z-index: -1;
+  }
 `
 
 const HeaderInner = styled.section`
@@ -27,7 +31,7 @@ const HeaderInner = styled.section`
 
   .about-page & {
     pointer-events: none;
-    transform: scale(0.9) translateY(-25%);
+    transform: scale(0.95) translateY(100%);
     opacity: 0.5;
   }
 `

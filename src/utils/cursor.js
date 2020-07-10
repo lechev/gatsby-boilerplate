@@ -31,7 +31,10 @@ export const initCursor = () => {
     height: 100
   }
   paper.setup(canvas)
-  const strokeColor = `rgba(221, 221, 221, 0.5)`
+
+  const isRoot = window.location.pathname === `/`
+
+  const strokeColor = isRoot ? `rgba(221, 221, 221, 0.5)` : `rgba(74, 74, 74, 0.5)`
   const strokeWidth = 2
   const segments = 8
   const radius = 15

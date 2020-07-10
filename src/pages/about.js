@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import PageTransition from "gatsby-v2-plugin-page-transitions"
+
 import { Helmet } from "react-helmet"
 import { rem } from "polished"
 import { Link } from "gatsby"
@@ -8,39 +10,50 @@ import { Link } from "gatsby"
 import Meta from "../components/meta"
 import Cursor from "../components/cursor"
 
-import PageTransition from "gatsby-plugin-page-transitions"
-
 const Container = styled.section.attrs({ className: `styled` })`
-  ${props => props.theme.gridContainer()};
+  width: calc(100% - ${rem(80)});
+  margin: ${rem(40)} auto 0;
+  border-radius: ${rem(20)} ${rem(20)} 0 0;
+  background-color: ${props => props.theme.colorWhite};
+  color: ${props => props.theme.colorBlack};
+  min-height: 100vh;
 
-  margin-top: ${rem(300)};
+  a {
+    color: ${props => props.theme.colorBlack} !important;
+  }
+`
+const ContainerInner = styled.div`
+  ${props => props.theme.gridContainer()};
 `
 
 export default () => (
-  <PageTransition
-    // defaultStyle={{
-    //   transition: 'left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
-    //   left: '100%',
-    //   position: 'absolute',
-    //   width: '100%',
-    //   height: '100%',
-    // }}
-    // transitionStyles={{
-    //   entering: { left: '0%' },
-    //   entered: { left: '0%' },
-    //   exiting: { left: '100%' },
-    // }}
-    transitionTime={500}
-  > 
-    <Helmet htmlAttributes={{ class: `about-page` }} />
-    
-    <Container>
-      <Meta title="About" />
-      <h1>About</h1>
-      <p>Such wow. Very React.</p>
-      <Link to="/">Back</Link>
-    </Container>
+  <React.Fragment>
+    <PageTransition
+      defaultStyle={{
+        transition: 'transform 500ms ease, opacity 500ms ease',
+        transform: 'translate3d(0, 20vh, 0)',
+        opacity: 0.5,
+      }}
+      transitionStyles={{
+        entering: { transform: 'translate3d(0, 0, 0)', opacity: 1, },
+        entered: { transform: 'translate3d(0, 0, 0)', opacity: 1, },
+        exiting: { transform: 'translate3d(0, 20vh, 0)', opacity: 0.5, },
+      }}
+      transitionTime={500}
+    > 
+      
+      <Container>
+        <Helmet htmlAttributes={{ class: `about-page` }} />
+        <Meta title="About" />
+
+        <ContainerInner>
+          <h1>About</h1>
+          <p>Such wow. Very React.</p>
+          <Link to="/">Back</Link>
+        </ContainerInner>
+      </Container>
+    </PageTransition>
 
     <Cursor />
-  </PageTransition>
+  </React.Fragment>
 )
