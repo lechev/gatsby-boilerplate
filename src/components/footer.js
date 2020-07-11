@@ -5,28 +5,55 @@ import { rem } from "polished"
 
 import {
   ReactComponent as LogoSvg,
-} from "../assets/images/logo.svg"
+} from "../assets/images/playground-symbol.svg"
 
 const FooterContainer = styled.footer`
-  margin: 3rem auto;
-  max-width: 650px;
-  padding: 0 1rem;
+  .about-page & {
+    width: calc(100% - ${rem(80)});
+    margin: 0 auto;
+    background-color: ${props => props.theme.colorWhite};
+    color: ${props => props.theme.colorMetallic};
+  }
 `
 
 const FooterContent = styled.main`
-  .-svg-logo {
-    display: block;
-    margin: ${rem(20)} ${rem(5)};
-    width: ${rem(60)};
-    height: ${rem(60)};
+  ${props => props.theme.gridContainer()};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: ${rem(135)};
+  padding-bottom: ${rem(65)};
+
+  .-logo {
+    ${props => props.theme.gridCell(4)};
+
+    svg {
+      display: block;
+      width: ${rem(45)};
+      height: auto;
+
+      > path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  .-copyright {
+    ${props => props.theme.gridCell(8)};
+
+    font-size: ${rem(14)};
   }
 `
 
 const Footer = ({ name }) => (
   <FooterContainer>
     <FooterContent>
-      <LogoSvg aria-label="Playground logo symbol" className={`-svg-logo`} />
-      <small>© {name} {new Date().getFullYear()}</small>
+      <div className={`-logo`}>
+        <LogoSvg aria-label="Playground logo symbol" />
+      </div>
+      <div className={`-copyright`}>
+        <small>© {name} {new Date().getFullYear()}</small>
+      </div>
     </FooterContent>
   </FooterContainer>
 )

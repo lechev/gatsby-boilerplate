@@ -11,8 +11,8 @@ import Meta from "../components/meta"
 import Cursor from "../components/cursor"
 
 const Container = styled.section.attrs({ className: `styled` })`
-  width: calc(100% - ${rem(20)});
-  margin: ${rem(40)} auto 0;
+  width: calc(100% - ${rem(80)});
+  margin: ${rem(60)} auto 0;
   border-radius: ${rem(20)} ${rem(20)} 0 0;
   background-color: ${props => props.theme.colorWhite};
   color: ${props => props.theme.colorMetallic};
