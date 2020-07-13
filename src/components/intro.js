@@ -2,7 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import Img from "gatsby-image"
+import Feat from "./feat"
+
+import CoffeeVideo from "../assets/videos/coffeetyping.mp4"
+import DesignIcon from "../assets/images/icons/pen-ruller.svg"
+import CodeIcon from "../assets/images/icons/terminal.svg"
+
 import { StaticQuery, graphql } from "gatsby"
 
 const Container = styled.section.attrs({ className: `styled` })`
@@ -11,7 +16,19 @@ const Container = styled.section.attrs({ className: `styled` })`
 
 const Intro = ({ data }) => (
   <Container id="intro">
-    <Img fluid={data.imgMain.childImageSharp.fluid} />
+    <Feat
+      title={`Design`}
+      icon={DesignIcon}
+      copy={`Design it like you mean it. In Figma. But feel free to use Sketch. Oh and don’t use Photoshop it sucks somewhat, sometimes, most of the times.`}
+      image={data.imgMain.childImageSharp.fluid}
+    />
+
+    <Feat
+      title={`Code`}
+      icon={CodeIcon}
+      copy={`Playground caters to your needs. If you want to dump a design on it or a gatsby plugin to test out — go right ahead old sport.`}
+      video={CoffeeVideo}
+    />
   </Container>
 )
 
@@ -25,10 +42,10 @@ export default props => (
       query IntroQuery {
         imgMain: file(
           sourceInstanceName: { eq: "images" }
-          relativePath: { eq: "main-image.jpg" }
+          relativePath: { eq: "keyboard.png" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 650) {
+            fluid(maxWidth: 516) {
               ...GatsbyImageSharpFluid
             }
           }

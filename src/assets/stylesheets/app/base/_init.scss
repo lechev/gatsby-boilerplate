@@ -4,7 +4,7 @@ html {
   font-weight: $fw-primary-normal;
   color: $color-white;
   background-color: $color-black;
-  background: linear-gradient(180deg, $color-black 0%, $color-metallic 100%);
+  background-image: linear-gradient(180deg, $color-black 0%, $color-metallic 100%);
   cursor: none;
 }
 

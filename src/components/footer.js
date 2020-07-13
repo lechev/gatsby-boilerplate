@@ -21,7 +21,7 @@ const FooterContent = styled.main`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: ${rem(135)};
+  padding-top: ${rem(100)};
   padding-bottom: ${rem(65)};
 
   .-logo {
