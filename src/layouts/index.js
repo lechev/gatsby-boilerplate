@@ -22,7 +22,7 @@ export default ({ children }) => (
         {children}
       </Main>
 
-      <Footer name="Kollegorna" />
+      <Footer name="Nikolay Lechev" />
     </React.Fragment>
   </ThemeProvider>
 )

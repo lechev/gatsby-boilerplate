@@ -11,16 +11,12 @@ import Meta from "../components/meta"
 import Cursor from "../components/cursor"
 
 const Container = styled.section.attrs({ className: `styled` })`
-  width: calc(100% - ${rem(80)});
+  width: calc(100% - ${rem(20)});
   margin: ${rem(60)} auto 0;
   border-radius: ${rem(20)} ${rem(20)} 0 0;
   background-color: ${props => props.theme.colorWhite};
   color: ${props => props.theme.colorMetallic};
   min-height: 100vh;
-
-  a {
-    color: ${props => props.theme.colorMetallic} !important;
-  }
 `
 const ContainerInner = styled.div`
   ${props => props.theme.gridContainer()};

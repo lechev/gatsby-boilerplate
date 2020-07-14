@@ -4,15 +4,19 @@ import Img from "gatsby-image"
 
 import { rem } from "polished"
 
+import {
+  ReactComponent as SvgIcon,
+} from "../assets/images/icons/arrow-right.svg"
+
 const FeatContainer = styled.div.attrs({ className: `styled` })`
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
   margin-bottom: ${rem(40)};
   border-radius: ${rem(10)};
-  color: ${props => props.theme.colorMetallic};
+  color: ${props => props.theme.colorGray};
   background-image: linear-gradient(90deg, ${props => props.theme.colorWhite} 0%, ${props => props.theme.colorIvory} 100%);
 
   &.--video-container {
@@ -22,11 +26,53 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
 `
 
 const FeatContent = styled.div`
-  ${props => props.theme.gridCell(5)};
+  ${props => props.theme.gridCell(6)};
+  padding: ${rem(60)};
+  display: flex;
+  flex-wrap: wrap;
+
+  .-copy {
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: ${rem(12)};
+      color: ${props => props.theme.colorMetallic};
+
+      img {
+        margin-right: ${rem(10)};
+      }
+    }
+  }
+
+  .-cta {
+    display: inline-block;
+    margin-top: auto;
+    padding: ${rem(25)} ${rem(60)} 0 0;
+    border-top: 1px solid ${props => props.theme.colorGrayLight};
+    color: ${props => props.theme.colorMetallic};
+
+    a {
+      padding: ${rem(5)} 0;
+
+      svg {
+        transition: transform .2s ease;
+        display: inline-block;
+        width: ${rem(14)};
+        margin-left: ${rem(12)};
+        fill: none;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
 `
 
 const FeatMedia = styled.div`
-  ${props => props.theme.gridCell(7)};
+  ${props => props.theme.gridCell(6)};
   overflow: hidden;
   position: relative;
 
@@ -47,18 +93,28 @@ const FeatMedia = styled.div`
   video {
     display: block;
     width: auto;
-    min-height: 100%;
+    height: 100%;
+    max-height: ${rem(375)};
     transform: translateX(-15%);
   }
 `
 
-const Feat = ({ icon, title, copy, image, video }) => (
+const Feat = ({ icon, title, copy, cta, image, video }) => (
   <FeatContainer className={video ? `--video-container` : ``} >
     <FeatContent>
       <div className="-copy">
-        <img src={icon} alt="Icon" />
-        <h2>{title}</h2>
+        <div className="title">
+          <img src={icon} alt="Icon" />
+          <h2>{title}</h2>
+        </div>
         <p>{copy}</p>
+      </div>
+
+      <div className="-cta">
+        <a href="#">
+          {cta}
+          <SvgIcon />
+        </a>
       </div>
     </FeatContent>
 

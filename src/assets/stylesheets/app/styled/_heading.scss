@@ -18,3 +18,24 @@
 .styled h1:not(.do-unstyle) {
   @extend .styled-h1;
 }
+
+// h2
+
+.styled-h2 {
+  @include ff-secondary;
+
+  font-size: em(24);
+  font-weight: $fw-secondary-normal;
+  line-height: 1.2;
+  letter-spacing: em(0.5);
+  word-break: break-word;
+
+  @include mq(medium down) {
+    font-size: em(20);
+    letter-spacing: em(0.3);
+  }
+}
+
+.styled h2:not(.do-unstyle) {
+  @extend .styled-h2;
+}

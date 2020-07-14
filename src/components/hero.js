@@ -84,7 +84,7 @@ const Hero = () => (
             <Underline aria-label="Underline animation" />
           </span>
         </h1>
-        <p className={`-lead`}>This is a digital playground for Kollegorna experiments.</p>
+        <p className={`-lead`}>This is a digital playground for personal experiments.</p>
       </Content>
       <Cta>
         <a href="#intro">

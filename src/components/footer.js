@@ -9,7 +9,7 @@ import {
 
 const FooterContainer = styled.footer`
   .about-page & {
-    width: calc(100% - ${rem(80)});
+    width: calc(100% - ${rem(20)});
     margin: 0 auto;
     background-color: ${props => props.theme.colorWhite};
     color: ${props => props.theme.colorMetallic};

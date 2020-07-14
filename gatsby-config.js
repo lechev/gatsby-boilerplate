@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: "Try and Test",
     titleTemplate: "%s · Playground",
-    description: "This is a digital playground for Kollegorna experiments.",
+    description: "This is a digital playground for personal experiments.",
   },
   plugins: [
     {
