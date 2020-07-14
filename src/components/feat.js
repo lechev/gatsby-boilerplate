@@ -18,6 +18,7 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
   border-radius: ${rem(10)};
   color: ${props => props.theme.colorGray};
   background-image: linear-gradient(90deg, ${props => props.theme.colorWhite} 0%, ${props => props.theme.colorIvory} 100%);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
 
   &.--video-container {
     background-color: #FFEEAC;
@@ -73,8 +74,9 @@ const FeatContent = styled.div`
 
 const FeatMedia = styled.div`
   ${props => props.theme.gridCell(6)};
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  border-radius: ${rem(10)};
 
   .--video-container & {
     &:after {
@@ -95,13 +97,12 @@ const FeatMedia = styled.div`
     width: auto;
     height: 100%;
     max-height: ${rem(375)};
-    transform: translateX(-15%);
   }
 `
 
 const Feat = ({ icon, title, copy, cta, image, video }) => (
   <FeatContainer className={video ? `--video-container` : ``} >
-    <FeatContent>
+    <FeatContent className={`js--reverse-cursor`}>
       <div className="-copy">
         <div className="title">
           <img src={icon} alt="Icon" />

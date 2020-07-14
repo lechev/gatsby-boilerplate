@@ -18,7 +18,7 @@ const CursorContainer = styled.div`
     background: ${props => props.theme.colorWhite};
 
     .about-page & {
-      background: ${props => props.theme.colorBlack};
+      background: ${props => props.theme.colorMetallic};
     }
   }
 

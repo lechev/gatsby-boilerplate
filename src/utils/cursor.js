@@ -99,6 +99,24 @@ export const initCursor = () => {
     item.addEventListener(`mouseleave`, handleMouseLeave)
   })
 
+  // Handle color reversal
+  const handleColorReverse = e => {
+    polygon.strokeColor = `rgba(74, 74, 74, 0.5)`
+    innerCursor.style.background = `#2A2B32`
+  }
+
+  const handleColorLeave = () => {
+    polygon.strokeColor = strokeColor
+    innerCursor.style.background = `#F2F2F2`
+  }
+
+  // add event listeners to reverse items
+  const reverseItems = document.querySelectorAll(`.js--reverse-cursor`)
+  reverseItems.forEach(item => {
+    item.addEventListener(`mouseenter`, handleColorReverse)
+    item.addEventListener(`mouseleave`, handleColorLeave)
+  })
+
   // Hover effect
   paper.view.onFrame = event => {
     // using linear interpolation, the circle will move 0.2 (20%)

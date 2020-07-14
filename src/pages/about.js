@@ -37,7 +37,6 @@ export default () => (
       }}
       transitionTime={500}
     > 
-      
       <Container>
         <Helmet htmlAttributes={{ class: `about-page` }} />
         <Meta title="About" />

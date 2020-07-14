@@ -82,7 +82,7 @@ const Navigation = styled.div`
     }
   }
 
-  @media ${props => props.theme.mediumDown} {
+  @media ${props => props.theme.xxlargeDown} {
     display: none;
   }
 `
