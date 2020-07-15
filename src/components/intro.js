@@ -21,7 +21,9 @@ const Intro = ({ data }) => (
       icon={DesignIcon}
       copy={`Design it like you mean it. In Figma. But feel free to use Sketch. Oh and don’t use Photoshop it sucks somewhat, sometimes, most of the times.`}
       cta={`View in Figma`}
+      ctaLink={`https://www.kollegorna.se/`}
       image={data.imgMain.childImageSharp.fluid}
+      reverseCursor
     />
 
     <Feat
@@ -29,7 +31,9 @@ const Intro = ({ data }) => (
       icon={CodeIcon}
       copy={`Playground caters to your needs. If you want to dump a design on it or a gatsby plugin to test out — go right ahead old sport.`}
       cta={`Go to the repo`}
+      ctaLink={`https://www.kollegorna.se/`}
       video={CoffeeVideo}
+      reverseCursor
     />
   </Container>
 )

@@ -24,6 +24,15 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
     background-color: #FFEEAC;
     background-image: linear-gradient(90deg, #FFF6D7 0%, #FFEEAC 20%, rgba(255, 238, 172, 0) 40%);
   }
+
+  .about-page & {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+
+    &.--video-container {
+      background-color: #F1D34B;
+      background-image: linear-gradient(90deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
+    }
+  }
 `
 
 const FeatContent = styled.div`
@@ -76,7 +85,6 @@ const FeatMedia = styled.div`
   ${props => props.theme.gridCell(6)};
   position: relative;
   overflow: hidden;
-  border-radius: ${rem(10)};
 
   .--video-container & {
     &:after {
@@ -87,22 +95,37 @@ const FeatMedia = styled.div`
       top: 0;
       left: 0;
       height: 100%;
-      width: 25%;
+      width: 35%;
       background-image: linear-gradient(90deg, #FFEEAC 0%, rgba(255, 238, 172, 0) 100%);
+    }
+  }
+
+  .about-page .--video-container & {
+    &:after {
+      background-image: linear-gradient(90deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
     }
   }
 
   video {
     display: block;
     width: auto;
-    height: 100%;
-    max-height: ${rem(375)};
+    height: ${rem(375)};
+    min-width: 100%;
   }
 `
 
-const Feat = ({ icon, title, copy, cta, image, video }) => (
+const Feat = ({
+  icon,
+  title,
+  copy,
+  cta,
+  ctaLink,
+  image,
+  video,
+  reverseCursor
+}) => (
   <FeatContainer className={video ? `--video-container` : ``} >
-    <FeatContent className={`js--reverse-cursor`}>
+    <FeatContent className={reverseCursor ? `js--reverse-cursor` : ``}>
       <div className="-copy">
         <div className="title">
           <img src={icon} alt="Icon" />
@@ -112,7 +135,7 @@ const Feat = ({ icon, title, copy, cta, image, video }) => (
       </div>
 
       <div className="-cta">
-        <a href="#">
+        <a href={ctaLink} target="_blank" rel="noopener noreferrer nofollow">
           {cta}
           <SvgIcon />
         </a>
