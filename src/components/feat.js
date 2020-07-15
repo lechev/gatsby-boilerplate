@@ -113,6 +113,8 @@ const FeatMedia = styled.div`
   ${props => props.theme.gridCell(6)};
   position: relative;
   overflow: hidden;
+  border-radius: 0 ${rem(10)} ${rem(10)} 0;
+  clip-path: content-box;
 
   @media ${props => props.theme.xxlargeDown} {
     ${props => props.theme.gridCell(4)};
@@ -121,6 +123,8 @@ const FeatMedia = styled.div`
 
   @media ${props => props.theme.smallDown} {
     ${props => props.theme.gridCell(12)};
+
+    border-radius: 0 0 ${rem(10)} ${rem(10)};
 
     .gatsby-image-wrapper {
       transform: translateX(2%);
@@ -165,11 +169,15 @@ const FeatMedia = styled.div`
 
     @media ${props => props.theme.xxlargeDown} {
       transform: translateX(-28%);
-      height: ${rem(265)};
+      height: ${rem(285)};
+    }
+
+    .about-page & {
+      transform: translateX(0);
     }
 
     @media ${props => props.theme.smallDown} {
-      transform: translateY(0);
+      transform: translateX(0);
       height: auto;
       width: 100%;
     }
@@ -206,7 +214,7 @@ const Feat = ({
 
     <FeatMedia>
       {video && (
-        <video playsinline autoplay="autoplay" muted loop="loop" aria-hidden="true">
+        <video autobuffer playsinline muted autoplay="autoplay" loop="loop" aria-hidden="true">
           <source src={video} type="video/mp4" />
         </video>
       )}

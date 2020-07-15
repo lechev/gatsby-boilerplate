@@ -20,6 +20,19 @@ const CursorContainer = styled.div`
     .about-page & {
       background: ${props => props.theme.colorMetallic};
     }
+
+    // Hacks for touch devices
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
+    }
+
+    @media (hover: none) and (pointer: fine) {
+      display: none;
+    }
+
+    @media (hover: hover) and (pointer: coarse) {
+      display: none;
+    }
   }
 
   .cursor--canvas {
@@ -30,6 +43,19 @@ const CursorContainer = styled.div`
     width: 100vw;
     height: 100vh;
     z-index: 100;
+
+    // Hacks for touch devices
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
+    }
+
+    @media (hover: none) and (pointer: fine) {
+      display: none;
+    }
+
+    @media (hover: hover) and (pointer: coarse) {
+      display: none;
+    }
   }
 `
 

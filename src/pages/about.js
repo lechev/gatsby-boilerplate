@@ -33,14 +33,12 @@ export default () => (
 
     <PageTransition
       defaultStyle={{
-        transition: 'transform 500ms ease, opacity 500ms ease',
-        transform: 'translate3d(0, 25vh, 0)',
-        opacity: 0.5,
+        transition: `transform 500ms ease`,
+        transform: `translate3d(0, 25vh, 0)`,
       }}
       transitionStyles={{
-        entering: { transform: 'translate3d(0, 0, 0)', opacity: 1, },
-        entered: { transform: 'translate3d(0, 0, 0)', opacity: 1, },
-        exiting: { transform: 'translate3d(0, 25vh, 0)', opacity: 0.5, },
+        entering: { transform: `translate3d(0, 0, 0)` },
+        entered: { transform: `translate3d(0, 0, 0)` },
       }}
       transitionTime={500}
     > 

@@ -16,6 +16,11 @@ const gridContainer = (maxWidth = containerMaxWidth) => css`
     css`
       max-width: ${rem(maxWidth)};
     `}
+  
+  @media ${props => props.theme.smallDown} {
+    padding-left: ${rem(gutter / 2)};
+    padding-right: ${rem(gutter / 2)};
+  }
 `
 
 const gridGrid = () => css`

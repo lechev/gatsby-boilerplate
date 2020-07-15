@@ -30,6 +30,8 @@ const ContainerInner = styled.div`
 
   @media ${props => props.theme.largeDown} {
     padding-bottom: 5vh;
+    max-height: -webkit-fill-available;
+    max-height: -moz-available;
   }
 `
 

@@ -9,16 +9,14 @@ export default () => (
   <React.Fragment>
     <PageTransition
       defaultStyle={{
-        transition: 'transform 500ms ease, opacity 500ms ease',
-        transform: 'translate3d(0, 2.5vh, 0) scale(0.95)',
-        opacity: 0.5,
+        transition: `transform 500ms ease`,
+        transform: `translate3d(0, 2.5vh, 0) scale(0.95)`,
       }}
       transitionStyles={{
-        entering: { transform: 'translate3d(0, 0, 0) scale(1)', opacity: 1, },
-        entered: { transform: 'translate3d(0, 0, 0) scale(1)', opacity: 1, },
-        exiting: { transform: 'translate3d(0, 2.5vh, 0) scale(0.95)', opacity: 0.5, },
+        entering: { transform: `translate3d(0, 0, 0) scale(1)` },
+        entered: { transform: `translate3d(0, 0, 0) scale(1)` },
       }}
-      transitionTime={500}
+      transitionTime={0}
     >
       <Hero />
       <Intro />
