@@ -8,10 +8,23 @@ const Container = styled.section.attrs({ className: `styled` })`
 
   padding-top: ${rem(90)};
   padding-bottom: ${rem(180)};
+
+  @media ${props => props.theme.smallDown} {
+    padding-top: ${rem(60)};
+    padding-bottom: ${rem(60)};
+  }
 `
 
 const ContainerInner = styled.div`
   ${props => props.theme.gridCell(8)};
+
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(10)};
+  }
+
+  @media ${props => props.theme.smallDown} {
+    ${props => props.theme.gridCell(12)};
+  }
 `
 
 const Hero = () => (

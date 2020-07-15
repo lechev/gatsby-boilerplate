@@ -10,6 +10,10 @@ import PixelsIcon from "../../assets/images/icons/pixels.svg"
 const Container = styled.section`
   ${props => props.theme.gridContainer()};
   padding-bottom: ${rem(40)};
+
+  @media ${props => props.theme.xxlargeDown} {
+    padding-bottom: ${rem(20)};
+  }
 `
 
 const Intro = () => (

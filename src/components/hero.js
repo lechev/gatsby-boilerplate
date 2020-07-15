@@ -15,19 +15,28 @@ const Container = styled.section.attrs({ className: `styled` })``
 
 const ContainerInner = styled.div`
   ${props => props.theme.gridContainer()};
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-height: 100vh;
   height: 100vh;
   padding-bottom: 15vh;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+
+  @media ${props => props.theme.xxlargeDown} {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 10vh;
+  }
+
+  @media ${props => props.theme.largeDown} {
+    padding-bottom: 5vh;
+  }
 `
 
 const Cta = styled.div`
   ${props => props.theme.gridCell(4)};
 
-  @media ${props => props.theme.mediumDown} {
+  @media ${props => props.theme.xxlargeDown} {
     ${props => props.theme.gridCell(12)};
   }
 
@@ -43,14 +52,29 @@ const Cta = styled.div`
     fill: none;
     width: ${rem(122)};
     height: ${rem(122)};
+
+    @media ${props => props.theme.xxlargeDown} {
+      width: ${rem(100)};
+      height: ${rem(100)};
+    }
+
+    @media ${props => props.theme.smallDown} {
+      width: ${rem(68)};
+      height: ${rem(68)};
+    }
   }
 `
 
 const Content = styled.div`
   ${props => props.theme.gridCell(8)};
 
-  @media ${props => props.theme.mediumDown} {
+  @media ${props => props.theme.xxlargeDown} {
     ${props => props.theme.gridCell(12)};
+    margin-bottom: ${rem(60)};
+  }
+
+  @media ${props => props.theme.smallDown} {
+    margin-bottom: ${rem(20)};
   }
 
   span {
@@ -70,6 +94,10 @@ const Content = styled.div`
   p {
     margin-top: ${rem(18)};
     color: ${props => props.theme.colorIvory};
+
+    @media ${props => props.theme.smallDown} {
+      margin-top: ${rem(12)};
+    }
   }
 `
 

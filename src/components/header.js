@@ -19,6 +19,14 @@ const HeaderContainer = styled.header.attrs({ className: `styled` })`
   z-index: 1;
   padding-top: ${rem(60)};
 
+  @media ${props => props.theme.xxlargeDown} {
+    padding-top: ${rem(30)};
+  }
+
+  @media ${props => props.theme.smallDown} {
+    padding-top: ${rem(20)};
+  }
+
   .about-page & {
     z-index: -1;
   }
@@ -39,15 +47,45 @@ const HeaderInner = styled.section`
 const Logo = styled.div`
   ${props => props.theme.gridCell(4)};
 
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(6)};
+  }
+
   svg {
     display: block;
     width: auto;
     height: ${rem(40)};
+
+    @media ${props => props.theme.smallDown} {
+      height: ${rem(30)};
+    }
   }
 `
 
 const Navigation = styled.div`
   ${props => props.theme.gridCell(8)};
+
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(6)};
+
+    text-align: right;
+  }
+
+  .-mobile-nav {
+    display: none;
+    
+    @media ${props => props.theme.xxlargeDown} {
+      display: block;
+    }
+  }
+
+  .-desktop-nav {
+    display: block;
+
+    @media ${props => props.theme.xxlargeDown} {
+      display: none;
+    }
+  }
 
   span {
     font-size: ${rem(32)};
@@ -80,10 +118,12 @@ const Navigation = styled.div`
         opacity: 0;
       }
     }
-  }
 
-  @media ${props => props.theme.xxlargeDown} {
-    display: none;
+    @media ${props => props.theme.xxlargeDown} {
+      &:after {
+        display: none;
+      }
+    }
   }
 `
 
@@ -94,10 +134,16 @@ const Header = ({ name }) => (
         <LogoSvg aria-label="{name}" />
       </Logo>
       <Navigation>
-        <p>
-          <span role="img" aria-label="Wave emoji">👋</span>
-           Welcome to this website, you can learn more <Link className={`do-unstyle`} to="/about">about it here</Link>.
-        </p>
+        <div className="-desktop-nav">
+          <p>
+            <span role="img" aria-label="Wave emoji">👋</span>
+            Welcome to this website, you can learn more <Link className={`do-unstyle`} to="/about">about it here</Link>.
+          </p>
+        </div>
+
+        <div className="-mobile-nav">
+          <Link className={`do-unstyle`} to="/about">About</Link>
+        </div>
       </Navigation>
     </HeaderInner>
   </HeaderContainer>

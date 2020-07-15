@@ -13,6 +13,10 @@ const Container = styled.header.attrs({ className: `styled` })`
 
   padding-top: ${rem(55)};
 
+  @media ${props => props.theme.smallDown} {
+    padding-top: ${rem(20)};
+  }
+
   a {
     display: flex;
     align-items: center;

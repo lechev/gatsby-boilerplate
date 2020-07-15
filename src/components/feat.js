@@ -20,9 +20,17 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
   background-image: linear-gradient(90deg, ${props => props.theme.colorWhite} 0%, ${props => props.theme.colorIvory} 100%);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
 
+  @media ${props => props.theme.xxlargeDown} {
+    margin-bottom: ${rem(20)};
+  }
+
   &.--video-container {
     background-color: #FFEEAC;
     background-image: linear-gradient(90deg, #FFF6D7 0%, #FFEEAC 20%, rgba(255, 238, 172, 0) 40%);
+
+    @media ${props => props.theme.smallDown} {
+      background-image: linear-gradient(180deg, #FFF6D7 0%, #FFEEAC 20%, rgba(255, 238, 172, 0) 40%);
+    }
   }
 
   .about-page & {
@@ -31,6 +39,10 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
     &.--video-container {
       background-color: #F1D34B;
       background-image: linear-gradient(90deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
+
+      @media ${props => props.theme.smallDown} {
+        background-image: linear-gradient(180deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
+      }
     }
   }
 `
@@ -41,7 +53,19 @@ const FeatContent = styled.div`
   display: flex;
   flex-wrap: wrap;
 
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(8)};
+    padding: ${rem(30)};
+  }
+
+  @media ${props => props.theme.smallDown} {
+    ${props => props.theme.gridCell(12)};
+    padding: ${rem(30)} ${rem(20)} ${rem(20)};
+  }
+
   .-copy {
+    margin-bottom: ${rem(30)};
+
     .title {
       display: flex;
       align-items: center;
@@ -50,6 +74,10 @@ const FeatContent = styled.div`
 
       img {
         margin-right: ${rem(10)};
+
+        @media ${props => props.theme.xxlargeDown} {
+          width: ${rem(28)};
+        }
       }
     }
   }
@@ -86,6 +114,19 @@ const FeatMedia = styled.div`
   position: relative;
   overflow: hidden;
 
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(4)};
+    align-self: center;
+  }
+
+  @media ${props => props.theme.smallDown} {
+    ${props => props.theme.gridCell(12)};
+
+    .gatsby-image-wrapper {
+      transform: translateX(2%);
+    }
+  }
+
   .--video-container & {
     &:after {
       content: '';
@@ -97,12 +138,22 @@ const FeatMedia = styled.div`
       height: 100%;
       width: 35%;
       background-image: linear-gradient(90deg, #FFEEAC 0%, rgba(255, 238, 172, 0) 100%);
+
+      @media ${props => props.theme.smallDown} {
+        width: 100%;
+        height: 15%;
+        background-image: linear-gradient(180deg, #FFEEAC 0%, rgba(255, 238, 172, 0) 100%);
+      }
     }
   }
 
   .about-page .--video-container & {
     &:after {
       background-image: linear-gradient(90deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
+
+      @media ${props => props.theme.smallDown} {
+        background-image: linear-gradient(180deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
+      }
     }
   }
 
@@ -111,6 +162,17 @@ const FeatMedia = styled.div`
     width: auto;
     height: ${rem(375)};
     min-width: 100%;
+
+    @media ${props => props.theme.xxlargeDown} {
+      transform: translateX(-28%);
+      height: ${rem(265)};
+    }
+
+    @media ${props => props.theme.smallDown} {
+      transform: translateY(0);
+      height: auto;
+      width: 100%;
+    }
   }
 `
 

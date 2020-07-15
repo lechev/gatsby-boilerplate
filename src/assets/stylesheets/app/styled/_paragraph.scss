@@ -4,12 +4,20 @@
   font-size: em(18);
   line-height: 1.5;
 
+  @include mq(xxlarge down) {
+    font-size: em(16);
+  }
+
   @include mq(small down) {
     font-size: em(14);
   }
 
   &.-lead {
     font-size: em(24);
+
+    @include mq(xxlarge down) {
+      font-size: em(20);
+    }
 
     @include mq(small down) {
       font-size: em(18);

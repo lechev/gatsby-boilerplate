@@ -18,7 +18,12 @@ const PageContainer = styled.section`
   border-radius: ${rem(20)} ${rem(20)} 0 0;
   background-color: ${props => props.theme.colorWhite};
   color: ${props => props.theme.colorMetallic};
-  min-height: 90vh;
+  min-height: 100vh;
+
+  @media ${props => props.theme.smallDown} {
+    width: 100%;
+    margin-top: ${rem(30)};
+  }
 `
 
 export default () => (

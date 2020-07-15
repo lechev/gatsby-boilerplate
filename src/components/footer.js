@@ -13,6 +13,10 @@ const FooterContainer = styled.footer`
     margin: 0 auto;
     background-color: ${props => props.theme.colorWhite};
     color: ${props => props.theme.colorMetallic};
+
+    @media ${props => props.theme.smallDown} {
+      width: 100%;
+    }
   }
 `
 
@@ -24,8 +28,17 @@ const FooterContent = styled.main`
   padding-top: ${rem(85)};
   padding-bottom: ${rem(65)};
 
+  @media ${props => props.theme.smallDown} {
+    padding-top: ${rem(45)};
+    padding-bottom: ${rem(35)};
+  }
+
   .-logo {
     ${props => props.theme.gridCell(4)};
+
+    @media ${props => props.theme.xxlargeDown} {
+      ${props => props.theme.gridCell(6)};
+    }
 
     svg {
       display: block;
@@ -35,6 +48,10 @@ const FooterContent = styled.main`
       > path {
         fill: currentColor;
       }
+
+      @media ${props => props.theme.smallDown} {
+        width: ${rem(35)};
+      }
     }
   }
 
@@ -42,6 +59,13 @@ const FooterContent = styled.main`
     ${props => props.theme.gridCell(8)};
 
     font-size: ${rem(14)};
+
+    @media ${props => props.theme.smallDown} {
+      ${props => props.theme.gridCell(6)};
+
+      text-align: right;
+      font-size: ${rem(12)};
+    }
   }
 `
 
