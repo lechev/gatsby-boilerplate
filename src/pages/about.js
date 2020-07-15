@@ -23,6 +23,7 @@ const PageContainer = styled.section`
   @media ${props => props.theme.smallDown} {
     width: 100%;
     margin-top: ${rem(30)};
+    border-radius: ${rem(15)} ${rem(15)} 0 0;
   }
 `
 

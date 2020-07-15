@@ -11,10 +11,10 @@ import {
 const Container = styled.header.attrs({ className: `styled` })`
   ${props => props.theme.gridContainer()};
 
-  padding-top: ${rem(55)};
+  padding-top: ${rem(35)};
 
   @media ${props => props.theme.smallDown} {
-    padding-top: ${rem(20)};
+    padding-top: ${rem(10)};
   }
 
   a {
