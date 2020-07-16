@@ -20,7 +20,6 @@ export default ({ children, location }) => (
       
       <PageTransition location={location}>
         {children}
-
         <Cursor />
       </PageTransition>
 

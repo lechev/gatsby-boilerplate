@@ -21,8 +21,9 @@ const Intro = ({ data }) => (
       copy={`Design it like you mean it. In Figma. But feel free to use Sketch. Oh and don’t use Photoshop it sucks somewhat, sometimes, most of the times.`}
       cta={`View in Figma`}
       ctaLink={`https://www.kollegorna.se/`}
-      image={data.imgMain.childImageSharp.fluid}
+      image={data.imgDisplay.childImageSharp.fluid}
       reverseCursor
+      accent
     />
 
     <Feat
@@ -31,7 +32,7 @@ const Intro = ({ data }) => (
       copy={`Playground caters to your needs. If you want to dump a design on it or a gatsby plugin to test out — go right ahead old sport.`}
       cta={`Go to the repo`}
       ctaLink={`https://www.kollegorna.se/`}
-      image={data.imgMain.childImageSharp.fluid}
+      image={data.imgKeyboard.childImageSharp.fluid}
       reverseCursor
     />
   </Container>
@@ -45,12 +46,22 @@ export default props => (
   <StaticQuery
     query={graphql`
       query IntroQuery {
-        imgMain: file(
+        imgKeyboard: file(
           sourceInstanceName: { eq: "images" }
           relativePath: { eq: "keyboard.png" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 516) {
+            fluid(maxWidth: 633) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imgDisplay: file(
+          sourceInstanceName: { eq: "images" }
+          relativePath: { eq: "display.png" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 633) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -14,8 +14,8 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: ${rem(40)};
   border-radius: ${rem(10)};
+  margin-bottom: ${rem(40)};
   color: ${props => props.theme.colorGray};
   background-image: linear-gradient(90deg, ${props => props.theme.colorWhite} 0%, ${props => props.theme.colorIvory} 100%);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
@@ -24,12 +24,25 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
     margin-bottom: ${rem(20)};
   }
 
-  &.--video-container {
-    background-color: #F1D34B;
-    background-image: linear-gradient(90deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
+  @media ${props => props.theme.mediumDown} {
+    background-image: linear-gradient(180deg, ${props => props.theme.colorWhite} 0%, ${props => props.theme.colorIvory} 100%);
+  }
 
-    @media ${props => props.theme.smallDown} {
-      background-image: linear-gradient(180deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
+  &.--accent {
+    background-color: ${props => props.theme.colorYellow};
+    background-image: linear-gradient(90deg, ${props => props.theme.colorYellowLight} 0%, ${props => props.theme.colorYellow} 100%);
+
+    @media ${props => props.theme.mediumDown} {
+      background-image: linear-gradient(180deg, ${props => props.theme.colorYellowLight} 0%, ${props => props.theme.colorYellow} 100%);
+    }
+  }
+
+  &.--video-container {
+    background-color: #FFF967;
+    background-image: linear-gradient(90deg, ${props => props.theme.colorYellowLight} 0%, #FFF967 20%, rgba(255, 249, 103, 0) 40%);
+
+    @media ${props => props.theme.mediumDown} {
+      background-image: linear-gradient(180deg, ${props => props.theme.colorYellowLight} 0%, #FFF967 20%, rgba(255, 249, 103, 0) 40%);
     }
   }
 
@@ -44,13 +57,12 @@ const FeatContent = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  @media ${props => props.theme.xxlargeDown} {
-    ${props => props.theme.gridCell(8)};
+  @media ${props => props.theme.mediumDown} {
+    ${props => props.theme.gridCell(12)};
     padding: ${rem(30)};
   }
 
   @media ${props => props.theme.smallDown} {
-    ${props => props.theme.gridCell(12)};
     padding: ${rem(30)} ${rem(20)} ${rem(20)};
   }
 
@@ -66,7 +78,7 @@ const FeatContent = styled.div`
       img {
         margin-right: ${rem(10)};
 
-        @media ${props => props.theme.xxlargeDown} {
+        @media ${props => props.theme.mediumDown} {
           width: ${rem(28)};
         }
       }
@@ -106,19 +118,15 @@ const FeatMedia = styled.div`
   overflow: hidden;
   border-radius: 0 ${rem(10)} ${rem(10)} 0;
   clip-path: content-box;
+  min-height: 100%;
 
-  @media ${props => props.theme.xxlargeDown} {
-    ${props => props.theme.gridCell(4)};
+  @media ${props => props.theme.mediumDown} {
+    ${props => props.theme.gridCell(12)};
+    border-radius: 0 0 ${rem(10)} ${rem(10)};
     align-self: center;
   }
 
-  @media ${props => props.theme.smallDown} {
-    ${props => props.theme.gridCell(12)};
-
-    border-radius: 0 0 ${rem(10)} ${rem(10)};
-  }
-
-  .--video-container & {
+  .about-page & {
     &:after {
       content: '';
       display: block;
@@ -128,34 +136,30 @@ const FeatMedia = styled.div`
       left: 0;
       height: 100%;
       width: 35%;
-      background-image: linear-gradient(90deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
+      background-image: linear-gradient(90deg, #FFF967 0%, rgba(255, 249, 103, 0) 100%);
 
-      @media ${props => props.theme.smallDown} {
+      @media ${props => props.theme.mediumDown} {
         width: 100%;
         height: 15%;
-        background-image: linear-gradient(180deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
+        background-image: linear-gradient(180deg, #FFF967 0%, rgba(255, 249, 103, 0) 100%);
       }
     }
+  }
+
+  .gatsby-image-wrapper {
+    min-height: 100%;
   }
 
   video {
     display: block;
     width: auto;
-    height: ${rem(375)};
     min-width: 100%;
+    height: 100%;
+    min-height: ${rem(375)};
 
-    @media ${props => props.theme.xxlargeDown} {
-      transform: translateX(-28%);
-      height: ${rem(285)};
-    }
-
-    .about-page & {
-      transform: translateX(0);
-    }
-
-    @media ${props => props.theme.smallDown} {
-      transform: translateX(0);
+    @media ${props => props.theme.mediumDown} {
       height: auto;
+      min-height: 0;
       width: 100%;
     }
   }
@@ -169,10 +173,13 @@ const Feat = ({
   ctaLink,
   image,
   video,
-  reverseCursor
+  reverseCursor,
+  accent
 }) => (
-  <FeatContainer className={video ? `--video-container` : ``} >
-    <FeatContent className={reverseCursor ? `js--reverse-cursor` : ``}>
+  <FeatContainer className={
+    `${reverseCursor ? `js--reverse-cursor` : ``} ${accent ? `--accent` : ``} ${video ? `--video-container` : ``}`
+  }>
+    <FeatContent>
       <div className="-copy">
         <div className="title">
           <img src={icon} alt="Icon" />
@@ -197,7 +204,12 @@ const Feat = ({
       )}
 
       {image && (
-        <Img fluid={image} />
+        <Img
+          fluid={image}
+          imgStyle={{
+            objectPosition: `center left`,
+          }}
+        />
       )}
     </FeatMedia>
   </FeatContainer>
