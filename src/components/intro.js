@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import Feat from "./feat"
 
-import CoffeeVideo from "../assets/videos/coffeetyping.mp4"
 import DesignIcon from "../assets/images/icons/pen-ruller.svg"
 import CodeIcon from "../assets/images/icons/terminal.svg"
 
@@ -32,7 +31,7 @@ const Intro = ({ data }) => (
       copy={`Playground caters to your needs. If you want to dump a design on it or a gatsby plugin to test out — go right ahead old sport.`}
       cta={`Go to the repo`}
       ctaLink={`https://www.kollegorna.se/`}
-      video={CoffeeVideo}
+      image={data.imgMain.childImageSharp.fluid}
       reverseCursor
     />
   </Container>

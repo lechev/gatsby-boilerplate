@@ -32,7 +32,6 @@ module.exports = {
         svgo: true, // configured in .svgo.yml file
       },
     },
-    `gatsby-v2-plugin-page-transitions`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-styled-components`,

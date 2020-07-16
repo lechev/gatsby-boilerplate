@@ -7,7 +7,7 @@ export function onRouteUpdate() {
   if(document.querySelector(`a[href*="#"]`)) {
     new SmoothScroll(`a[href*="#"]`, {
       speed: 800,
-      offset: 100,
+      offset: 50,
       speedAsDuration: true
     })
   }

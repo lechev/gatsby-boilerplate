@@ -25,25 +25,16 @@ const FeatContainer = styled.div.attrs({ className: `styled` })`
   }
 
   &.--video-container {
-    background-color: #FFEEAC;
-    background-image: linear-gradient(90deg, #FFF6D7 0%, #FFEEAC 20%, rgba(255, 238, 172, 0) 40%);
+    background-color: #F1D34B;
+    background-image: linear-gradient(90deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
 
     @media ${props => props.theme.smallDown} {
-      background-image: linear-gradient(180deg, #FFF6D7 0%, #FFEEAC 20%, rgba(255, 238, 172, 0) 40%);
+      background-image: linear-gradient(180deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
     }
   }
 
   .about-page & {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
-
-    &.--video-container {
-      background-color: #F1D34B;
-      background-image: linear-gradient(90deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
-
-      @media ${props => props.theme.smallDown} {
-        background-image: linear-gradient(180deg, #FFEC81 0%, #F1D34B 20%, rgba(242, 211, 75, 0) 40%);
-      }
-    }
   }
 `
 
@@ -125,10 +116,6 @@ const FeatMedia = styled.div`
     ${props => props.theme.gridCell(12)};
 
     border-radius: 0 0 ${rem(10)} ${rem(10)};
-
-    .gatsby-image-wrapper {
-      transform: translateX(2%);
-    }
   }
 
   .--video-container & {
@@ -141,21 +128,11 @@ const FeatMedia = styled.div`
       left: 0;
       height: 100%;
       width: 35%;
-      background-image: linear-gradient(90deg, #FFEEAC 0%, rgba(255, 238, 172, 0) 100%);
+      background-image: linear-gradient(90deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
 
       @media ${props => props.theme.smallDown} {
         width: 100%;
         height: 15%;
-        background-image: linear-gradient(180deg, #FFEEAC 0%, rgba(255, 238, 172, 0) 100%);
-      }
-    }
-  }
-
-  .about-page .--video-container & {
-    &:after {
-      background-image: linear-gradient(90deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
-
-      @media ${props => props.theme.smallDown} {
         background-image: linear-gradient(180deg, #F1D34B 0%, rgba(242, 211, 75, 0) 100%);
       }
     }
@@ -214,7 +191,7 @@ const Feat = ({
 
     <FeatMedia>
       {video && (
-        <video autobuffer playsinline muted autoplay="autoplay" loop="loop" aria-hidden="true">
+        <video playsInline muted autoPlay="autoplay" loop="loop" aria-hidden="true">
           <source src={video} type="video/mp4" />
         </video>
       )}

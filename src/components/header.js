@@ -16,7 +16,7 @@ const HeaderContainer = styled.header.attrs({ className: `styled` })`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 10;
   padding-top: ${rem(60)};
 
   @media ${props => props.theme.xxlargeDown} {
