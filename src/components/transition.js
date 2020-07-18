@@ -4,7 +4,7 @@ import {
   Transition as ReactTransition,
 } from "react-transition-group"
 
-const timeout = 250
+const timeout = 300
 const getTransitionStyles = {
   entering: {
     opacity: 0.5,
