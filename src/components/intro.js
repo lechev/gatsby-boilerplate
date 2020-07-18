@@ -51,7 +51,7 @@ export default props => (
           relativePath: { eq: "keyboard.png" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 633) {
+            fluid(maxWidth: 728) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -61,7 +61,7 @@ export default props => (
           relativePath: { eq: "display.png" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 633) {
+            fluid(maxWidth: 728) {
               ...GatsbyImageSharpFluid
             }
           }
