@@ -1,0 +1,32 @@
+@keyframes attention {
+  50% {
+    transform: translateY(-2.5%);
+  }
+  54% {
+    transform: translateY(2.5%);
+  }
+  60% {
+    transform: translateY(-5%);
+  }
+  64% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes svg_draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svg_fade {
+  0% {
+    stroke-opacity: 1;
+  }
+  93% {
+    stroke-opacity: 1;
+  }
+  100%{
+    stroke-opacity: 0;
+  }
+}

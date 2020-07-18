@@ -4,57 +4,148 @@ import styled from "styled-components"
 import { rem } from "polished"
 import { Link } from "gatsby"
 
-const HeaderContainer = styled.header`
-  margin: 3rem auto;
-  max-width: ${rem(650)};
-  padding: 0 1rem;
+import {
+  ReactComponent as LogoSvg,
+} from "../assets/images/playground-logo.svg"
 
-  a {
-    text-shadow: none;
-    background-image: none;
+const HeaderContainer = styled.header.attrs({ className: `styled` })`
+  ${props => props.theme.gridContainer()};
+
+  color: ${props => props.theme.colorIvory};
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding-top: ${rem(60)};
+
+  @media ${props => props.theme.xxlargeDown} {
+    padding-top: ${rem(30)};
   }
 
-  h3 {
-    display: inline;
-    font-size: ${rem(20)};
+  @media ${props => props.theme.smallDown} {
+    padding-top: ${rem(20)};
   }
 
-  ul {
-    list-style: none;
-    float: right;
+  .about-page & {
+    z-index: -1;
+  }
+`
+
+const HeaderInner = styled.section`
+  ${props => props.theme.gridGrid()};
+  align-items: center;
+  transition: transform .2s ease, opacity .2s ease;
+
+  .about-page & {
+    pointer-events: none;
+    transform: scale(0.95) translateY(100%);
+    opacity: 0.5;
+  }
+`
+
+const Logo = styled.div`
+  ${props => props.theme.gridCell(4)};
+
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(6)};
   }
 
-  li {
-    display: inline-block;
-    
-    &:not(:last-of-type) {
-      margin-right: 1rem;
-    }
+  svg {
+    display: block;
+    width: auto;
+    height: ${rem(40)};
 
-    a {
-      color: ${props => props.theme.colorTeal};
+    @media ${props => props.theme.smallDown} {
+      height: ${rem(30)};
     }
   }
 `
 
-const Navigation = styled.ul``
+const Navigation = styled.div`
+  ${props => props.theme.gridCell(8)};
 
-const ListLink = props => (
-  <li>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+  @media ${props => props.theme.xxlargeDown} {
+    ${props => props.theme.gridCell(6)};
+
+    text-align: right;
+  }
+
+  .-mobile-nav {
+    display: none;
+    
+    @media ${props => props.theme.xxlargeDown} {
+      display: block;
+    }
+  }
+
+  .-desktop-nav {
+    display: block;
+
+    @media ${props => props.theme.xxlargeDown} {
+      display: none;
+    }
+  }
+
+  span {
+    font-size: ${rem(32)};
+    line-height: ${rem(16)};
+    padding-right: ${rem(10)};
+    vertical-align: middle;
+  }
+
+  a {
+    font-weight: ${props => props.theme.fwPrimarySemibold};
+    color: ${props => props.theme.colorWhite};
+    position: relative;
+    padding: ${rem(10)} 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(100% - ${rem(5)});
+      left: 0;
+      height: ${rem(2)};
+      width: 100%;
+      background: ${props => props.theme.colorWhite};
+      opacity: 0.5;
+      transition: transform .4s ease, opacity .6s ease;
+    }
+
+    &:hover {
+      &:after {
+        transform: scale(0) translateY(-25px);
+        opacity: 0;
+      }
+    }
+
+    @media ${props => props.theme.xxlargeDown} {
+      &:after {
+        display: none;
+      }
+    }
+  }
+`
 
 const Header = ({ name }) => (
   <HeaderContainer>
-    <Link to="/">
-      <h3>{name}</h3>
-    </Link>
-    <Navigation>
-      <ListLink to="/">Home</ListLink>
-      <ListLink to="/about/">About</ListLink>
-      <ListLink to="/contact/">Contact</ListLink>
-    </Navigation>
+    <HeaderInner>
+      <Logo>
+        <LogoSvg aria-label="{name}" />
+      </Logo>
+      <Navigation>
+        <div className="-desktop-nav">
+          <p>
+            <span role="img" aria-label="Wave emoji">👋</span>
+            Welcome to this website, you can learn more <Link className={`do-unstyle`} to="/about">about it here</Link>.
+          </p>
+        </div>
+
+        <div className="-mobile-nav">
+          <Link className={`do-unstyle`} to="/about">About</Link>
+        </div>
+      </Navigation>
+    </HeaderInner>
   </HeaderContainer>
 )
 
