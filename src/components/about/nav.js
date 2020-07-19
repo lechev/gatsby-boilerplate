@@ -13,6 +13,10 @@ const Container = styled.header.attrs({ className: `styled` })`
 
   padding-top: ${rem(35)};
 
+  @media ${props => props.theme.mediumDown} {
+    padding-top: ${rem(20)};
+  }
+
   @media ${props => props.theme.smallDown} {
     padding-top: ${rem(10)};
   }
@@ -35,6 +39,10 @@ const Container = styled.header.attrs({ className: `styled` })`
     fill: none;
     width: ${rem(14)};
     transition: transform .2s ease;
+
+    @media ${props => props.theme.smallDown} {
+      margin-right: ${rem(8)};
+    }
   }
 `
 
