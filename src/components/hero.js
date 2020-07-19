@@ -80,13 +80,17 @@ const Content = styled.div`
   }
 
   span {
-    margin-top: 7.6%;
     display: inline-block;
-    line-height: 0;
+    line-height: 1;
+    position: relative;
   }
 
   svg {
-    margin-top: 10%;
+    display: block;
+    max-width: 100%;
+    position: absolute;
+    bottom: ${rem(-12)};
+    left: 0;
     stroke-dasharray: 616 618;
     stroke-dashoffset: -617;
     animation: svg_draw 1000ms ease 0ms forwards;
@@ -94,11 +98,11 @@ const Content = styled.div`
   }
 
   p {
-    margin-top: ${rem(18)};
+    margin-top: ${rem(32)};
     color: ${props => props.theme.colorIvory};
 
     @media ${props => props.theme.smallDown} {
-      margin-top: ${rem(12)};
+      margin-top: ${rem(18)};
     }
   }
 `

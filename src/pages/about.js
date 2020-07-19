@@ -17,6 +17,10 @@ const PageContainer = styled.section`
   color: ${props => props.theme.colorMetallic};
   min-height: 100vh;
 
+  @media ${props => props.theme.mediumDown} {
+    margin-top: ${rem(45)};
+  }
+
   @media ${props => props.theme.smallDown} {
     width: 100%;
     margin-top: ${rem(30)};
