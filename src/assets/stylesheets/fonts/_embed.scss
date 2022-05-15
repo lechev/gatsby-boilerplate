@@ -1,23 +1,17 @@
 $fonts: (
-  // Inter
+  // HK Grotesk
   (
-    name: 'Inter',
+    name: 'HK Grotesk',
     weight: 400,
     style: normal,
-    file: 'Inter/Inter-Regular',
+    file: 'HK Grotesk/HKGrotesk-Regular',
   ),
+  // HK Grotesk Wide
   (
-    name: 'Inter',
-    weight: 600,
-    style: normal,
-    file: 'Inter/Inter-SemiBold',
-  ),
-  // MonumentExtended
-  (
-    name: 'MonumentExtended',
+    name: 'HK Grotesk Wide',
     weight: 400,
     style: normal,
-    file: 'MonumentExtended/MonumentExtended-Regular',
+    file: 'HK Grotesk/HKGroteskWide-Regular',
   ),
 );
 

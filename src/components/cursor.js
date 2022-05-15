@@ -15,11 +15,7 @@ const CursorContainer = styled.div`
     top: ${rem(-4)};
     border-radius: 50%;
     z-index: 99;
-    background: ${props => props.theme.colorWhite};
-
-    .about-page & {
-      background: ${props => props.theme.colorMetallic};
-    }
+    background: ${props => props.theme.colorBlack};
 
     // Hacks for touch devices
     @media (hover: none) and (pointer: coarse) {

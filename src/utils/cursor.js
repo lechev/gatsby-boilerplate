@@ -32,9 +32,7 @@ export const initCursor = () => {
   }
   paper.setup(canvas)
 
-  const isRoot = window.location.pathname === `/`
-
-  const strokeColor = isRoot ? `rgba(221, 221, 221, 0.5)` : `rgba(74, 74, 74, 0.5)`
+  const strokeColor = `rgba(74, 74, 74, 0.5)`
   const strokeWidth = 2
   const segments = 8
   const radius = 15
@@ -97,24 +95,6 @@ export const initCursor = () => {
   linkItems.forEach(item => {
     item.addEventListener(`mouseenter`, handleMouseEnter)
     item.addEventListener(`mouseleave`, handleMouseLeave)
-  })
-
-  // Handle color reversal
-  const handleColorReverse = e => {
-    polygon.strokeColor = `rgba(74, 74, 74, 0.5)`
-    innerCursor.style.background = `#2A2B32`
-  }
-
-  const handleColorLeave = () => {
-    polygon.strokeColor = strokeColor
-    innerCursor.style.background = `#F2F2F2`
-  }
-
-  // add event listeners to reverse items
-  const reverseItems = document.querySelectorAll(`.js--reverse-cursor`)
-  reverseItems.forEach(item => {
-    item.addEventListener(`mouseenter`, handleColorReverse)
-    item.addEventListener(`mouseleave`, handleColorLeave)
   })
 
   // Hover effect

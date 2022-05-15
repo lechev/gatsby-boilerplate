@@ -6,13 +6,13 @@
 const path = require(`path`)
 
 const lang = `en`
-const name = `Playground`
-const shortName = `Playground`
-const title = `Try and Test`
-const titlePattern = `[PAGE_TITLE] · [SITE_NAME]`
-const description = `This is a digital playground for personal experiments.`
-const colorMain = `#2a2b32`
-const colorBg = `#f2f2f2`
+const name = `Nikolay Lechev`
+const shortName = `Nikolay Lechev`
+const title = `Product Designer and Developer`
+const titlePattern = `[SITE_NAME] · [PAGE_TITLE]`
+const description = `I’m Nikolay, a product designer who can code. I help startups shape, build, and scale their digital products.`
+const colorMain = `#333333`
+const colorBg = `#fbe8de`
 const socialImage = `/meta-images/social.jpg`
 const icon = `/meta-images/icon-transparent.png` // favicon, ms tile
 const iconBgColor = colorBg

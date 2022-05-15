@@ -1,22 +1,24 @@
 // h1
 
 .styled-h1 {
-  @include ff-secondary;
-
-  font-size: em(96);
+  font-size: em(36);
   font-weight: $fw-secondary-normal;
-  line-height: 1.2;
-  letter-spacing: em(0.5);
+  line-height: 1.33;
   word-break: break-word;
 
-  @include mq(xxlarge down) {
-    font-size: em(72);
-    letter-spacing: em(0.4);
+  > span {
+    @include ff-secondary;
+    
+    font-weight: $fw-secondary-normal;
   }
 
   @include mq(small down) {
-    font-size: em(56);
-    letter-spacing: em(0.3);
+    font-size: em(26);
+    line-height: 1.44;
+  }
+
+  @include mq(xsmall down) {
+    font-size: em(22);
   }
 }
 
@@ -29,15 +31,13 @@
 .styled-h2 {
   @include ff-secondary;
 
-  font-size: em(24);
+  font-size: em(28);
   font-weight: $fw-secondary-normal;
   line-height: 1.2;
-  letter-spacing: em(0.5);
   word-break: break-word;
 
-  @include mq(xxlarge down) {
-    font-size: em(20);
-    letter-spacing: em(0.3);
+  @include mq(small down) {
+    font-size: em(22);
   }
 }
 

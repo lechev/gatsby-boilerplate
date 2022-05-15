@@ -4,123 +4,183 @@ import styled from "styled-components"
 import { rem } from "polished"
 
 import {
-  ReactComponent as SvgIcon,
-} from "../assets/images/icons/arrow-down.svg"
+  ReactComponent as LogoSvg,
+} from "../assets/images/nikolay-lechev-logo.svg"
 
 import {
-  ReactComponent as Underline,
-} from "../assets/images/underline-animated.svg"
+  ReactComponent as LinesSvg,
+} from "../assets/images/lines.svg"
+
+import {
+  ReactComponent as ElementsSvg,
+} from "../assets/images/elements.svg"
+
+import { Link } from "gatsby"
 
 const Container = styled.section.attrs({ className: `styled` })``
 
 const ContainerInner = styled.div`
-  ${props => props.theme.gridContainer()};
-  height: 100vh;
-  padding-bottom: 15vh;
   display: flex;
-  align-items: flex-end;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16vh 8vw;
 
-  @media ${props => props.theme.xxlargeDown} {
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 10vh;
-  }
-
-  @media ${props => props.theme.largeDown} {
-    padding-bottom: 5vh;
-    max-height: -webkit-fill-available;
-    max-height: -moz-available;
+  @media ${props => props.theme.smallDown} {
+    padding: 8vh 8vw;
+    height: auto;
   }
 `
 
-const Cta = styled.div`
-  ${props => props.theme.gridCell(4)};
-
-  @media ${props => props.theme.xxlargeDown} {
-    ${props => props.theme.gridCell(12)};
-  }
-
-  a {
-    animation: attention 8s ease infinite;
-
-    &:hover {
-      animation-play-state: paused;
-    }
-  }
+const Logo = styled.div`
+  margin-bottom: ${rem(47)};
 
   svg {
-    fill: none;
-    width: ${rem(122)};
-    height: ${rem(122)};
+    display: block;
+    width: auto;
+    height: ${rem(52)};
+  }
 
-    @media ${props => props.theme.xxlargeDown} {
-      width: ${rem(100)};
-      height: ${rem(100)};
-    }
+  @media ${props => props.theme.smallDown} {
+    margin-bottom: ${rem(39)};
+  }
 
-    @media ${props => props.theme.smallDown} {
-      width: ${rem(68)};
-      height: ${rem(68)};
+  @media ${props => props.theme.xsmallDown} {
+    margin-bottom: ${rem(29)};
+
+    > svg {
+      height: ${rem(38)};
     }
   }
 `
 
 const Content = styled.div`
-  ${props => props.theme.gridCell(8)};
+  max-width: ${rem(704)};
 
   @media ${props => props.theme.xxlargeDown} {
-    ${props => props.theme.gridCell(12)};
-    margin-bottom: ${rem(60)};
+    max-width: ${rem(565)}
+  }
+`
+
+const Footer = styled.div`
+  margin-top: auto;
+
+  @media ${props => props.theme.smallDown} {
+    margin-top: ${rem(100)};
+  }
+
+  @media ${props => props.theme.xxsmallDown} {
+    margin-top: ${rem(60)};
+  }
+`
+
+const LinkGroup = styled.ul`
+  margin-top: ${rem(12)};
+
+  > li {
+    display: inline-block;
+
+    &:not(:first-of-type) {
+      margin-left: ${rem(26)};
+    }
   }
 
   @media ${props => props.theme.smallDown} {
-    margin-bottom: ${rem(20)};
-  }
+    > li {
+      display: block;
 
-  span {
-    margin-top: 7.6%;
-    display: inline-block;
-    line-height: 0;
-  }
-
-  svg {
-    margin-top: 10%;
-    stroke-dasharray: 616 618;
-    stroke-dashoffset: -617;
-    animation: svg_draw 1000ms ease 0ms forwards;
-    animation-delay: 500ms;
-  }
-
-  p {
-    margin-top: ${rem(18)};
-    color: ${props => props.theme.colorIvory};
-
-    @media ${props => props.theme.smallDown} {
-      margin-top: ${rem(12)};
+      &:not(:first-of-type) {
+        margin-left: 0;
+        margin-top: ${rem(12)};
+      }
     }
+  }
+`
+
+const Scribble = styled.span`
+  pointer-events: none;
+  position: absolute;
+  bottom: 5vh;
+  right: 0;
+
+  > svg {
+    width: ${rem(300)};
+  }
+
+  @media ${props => props.theme.xxlargeDown} {
+    bottom: -10vh;
+
+    > svg {
+      width: ${rem(200)};
+    }
+  }
+
+  @media ${props => props.theme.smallDown} {
+    bottom: -8vh;
+
+    > svg {
+      width: ${rem(120)};
+    }
+  }
+`
+
+const ScribbleTwo = styled.span`
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 10vw;
+
+  > svg {
+    width: ${rem(335)};
+  }
+
+  @media ${props => props.theme.xxlargeDown} {
+    > svg {
+      width: ${rem(280)};
+    }
+  }
+
+  @media ${props => props.theme.smallDown} {
+    display: none;
   }
 `
 
 const Hero = () => (
   <Container>
     <ContainerInner>
+      <Logo>
+        <LogoSvg aria-label="Nikolay Lechev" />
+      </Logo>
       <Content>
         <h1>
-          Try and test.<br/>
-          <span>
-            Often.
-            <Underline aria-label="Underline animation" />
-          </span>
+          Hello <span role="img" aria-label="Wave emoji">👋</span> I'm Nikolay, a <span>product designer</span> who can <span>code</span>. I help startups shape, build, and scale their <span>digital products</span>.
         </h1>
-        <p className={`-lead`}>This is a digital playground for personal experiments.</p>
       </Content>
-      <Cta>
-        <a href="#intro">
-          <SvgIcon aria-label="Arrow down" />
-        </a>
-      </Cta>
+
+      <Footer>
+        <h2>Want to talk?</h2>
+        <LinkGroup>
+          <li>
+            <a href="mailto:hello@nikolaylechev.com">hello@nikolaylechev.com</a>
+          </li>
+          <li>
+            <Link to="https://dribbble.com/iamlechev" target="_blank">Dribbble</Link>
+          </li>
+          <li>
+            <Link to="https://twitter.com/iamlechev" target="_blank">Twitter</Link>
+          </li>
+          <li>
+            <Link to="https://www.linkedin.com/in/nikolay-lechev-6927b1a5/" target="_blank">Linkedin</Link>
+          </li>
+        </LinkGroup>
+      </Footer>
+
+      <Scribble>
+        <LinesSvg aria-label="Lines Scribble" />
+      </Scribble>
+
+      <ScribbleTwo>
+        <ElementsSvg aria-label="Elements Scribble" />
+      </ScribbleTwo>
     </ContainerInner>
   </Container>
 )
